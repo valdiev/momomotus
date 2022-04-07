@@ -8,6 +8,7 @@ use App\Controller\Home;
 use App\Controller\Win;
 use App\Controller\Fail;
 use App\Controller\Controller;
+use App\Controller\NotFound;
 
 class Router
 {
@@ -15,6 +16,7 @@ class Router
         "/" => Home::class,
         "/win" => Win::class,
         "/fail" => Fail::class,
+        "/404" => NotFound::class,
     ];
 
     private static string $path;
