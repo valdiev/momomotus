@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Config;
+declare(strict_types=1);
 
+namespace App\Config;
 
 class WordsJson
 {
-    private const FILE_PATH = __DIR__ . "/../../Data/words.json";
+    private const FILE_PATH = __DIR__.'/../../Data/words.json';
     private array $words = [];
 
     private function loadFile()
@@ -17,14 +18,14 @@ class WordsJson
         return $this->words;
     }
 
-    public function getWord() {
+    public function getWord(): void
+    {
         $this->loadFile();
         shuffle($this->words);
-        
-        if (!isset($_COOKIE['word']) || $_COOKIE['word'] == "" ) {
+
+        if (!isset($_COOKIE['word']) || '' === $_COOKIE['word']) {
             setcookie('word', $this->words[0]['word']);
             $_COOKIE['word'] = $this->words[0]['word'];
         }
-
     }
 }
