@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace App\Elo;
 
-class Word {
+class Word
+{
     public int $word;
 
-    public function getWord(): int {
+    public function getWord(): int
+    {
         return $this->word;
     }
 }
